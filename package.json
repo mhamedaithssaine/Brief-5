@@ -1,0 +1,16 @@
+{
+  "name": "brief-5",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build":"npx tailwindcss -i ../Brief-5/Brief-5/assets/css/input.css -o ../Brief-5/Brief-5/assets/css/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
