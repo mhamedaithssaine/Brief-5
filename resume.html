@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/css/output.css">
+  <title>Document</title>
+</head>
+
+<body class="">
+  
+
+<!--formulaire steppers-->
+  <div class=" w-full max-w-lg container  mx-auto p-6 max-w-block bg-white shadow-lg rounded-lg  ">
+    <h1 class="text-2xl font-bold text-center">Création de CV en Ligne</h1><br>
+
+    <!-- Barre de progression -->
+    <div class="w-full bg-gray-300 rounded-full h-2.5 mb-4">
+      <div id="progress-bar" class="bg-blue-500 h-2.5 rounded-full" style="width: 0%"></div>
+    </div>
+
+    <!-- Formulaire à étapes -->
+    <form id="cvForm" class="">
+
+      <!-- Étape 1 : Informations personnelles -->
+      <section id="step1" class="">
+        <h2 class="text-xl font-semibold mt-4">Étape 1 : Informations personnelles</h2>
+        <label for="name" class="">Nom complet</label>
+        <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded">
+
+        <label for="photo" class="">Photo de profil</label>
+        <input type="file" accept="image/*" id="photo" name="image" class="w-full px-4 py-2 border rounded">
+
+        <label for="email" class="">Email</label>
+        <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded">
+
+
+        <label for="phone" class=" ">Téléphone</label>
+        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border rounded">
+
+        <label for="name" class=" ">Address</label>
+        <input type="text" id="address" name="name" class="w-full px-4 py-2 border rounded">
+
+        <label for="linkedin" class=" ">LinkedIn</label>
+        <input type="url" id="linkedin" name="linkedin" class="w-full px-4 py-2 border rounded">
+
+        <label for="github" class=" ">GitHub</label>
+        <input type="url" id="github" name="github" class="w-full px-4 py-2 border rounded">
+
+        <label for="portfolio" class=" ">Portfolio</label>
+        <input type="url" id="portfolio" name="portfolio" class="w-full px-4 py-2 border rounded">
+
+        <a href="index.html"><button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Cancel</button></a>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+      </section>
+
+      <!-- Étape 2 : Détails professionnels -->
+      <section id="step2" class="">
+        <h2 class="text-xl font-semibold mt-4">Étape 2 : Détails professionnels</h2>
+        <label for="jobTitle" class="">Titre du poste</label>
+        <input type="text" id="titrePoste" name="titre" class="w-full px-4 py-2 border rounded">
+
+        <label for="profileSummary" class="">Résumé de profil</label>
+        <div id="editor" placeholder="Resume de profile" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+
+        </div>
+
+        <button type="button"
+          class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700 ">Précédent</button>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+      </section>
+
+      <!-- Étape 3 : Compétences -->
+      <section id="step3" class=" ">
+        <h2 class="text-xl font-semibold mt-4">Étape 3 : Compétences techniques et soft skills</h2>
+        <h3 class="text-lg font-semibold">Compétences techniques</h3>
+        <div id="parent-compTechniques"> 
+          <div id="competenceTechnique" class="space-y-2">
+            <input type="text" id="hardSkills" class="w-full px-4 py-2 border rounded" placeholder="Compétence technique">
+          </div>
+        </div>
+        
+        <button onclick="addCompetenceTechniques()" type="button"  class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+          compétence technique</button>
+
+
+        <h3 class="text-lg font-semibold mt-4">Compétences interpersonnelles</h3>
+        <div id="parent-compInterpersonnelles">
+        <div id="competenceInterpersonnells" class="space-y-2">
+          <input type="text" id="softSkills" class="w-full px-4 py-2 border rounded" placeholder="Compétence interpersonnelle">
+        </div>
+      </div>
+        <button onclick="addCompetenceInterpersonnelles()"  type="button"  class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+          compétence interpersonnelle</button><br>
+
+        <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+      </section>
+
+     
+      
+      <!-- Étape 4 : Langues et Loisirs -->
+      <section id="step4" class=" ">
+        <h2 class="text-xl font-semibold mt-4">Étape 4 : Langues et Loisirs</h2>
+
+        <!-- Langues -->
+        <h3 class="text-lg font-semibold">Langues</h3>
+        <div id="parent-langues" >
+        <div  class="space-y-2">
+          <div class="flex space-x-2">
+            <input type="text" id="languages" placeholder="Langue" class="w-1/2 px-4 py-2 border rounded">
+            <input type="text" id="niveau" placeholder="Niveau" class="w-1/2 px-4 py-2 border rounded">
+          </div>
+        </div>
+        </div>
+        <button onclick="addLanguesNiveau()" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+          langue</button>
+
+        <!-- Loisirs -->
+        <h3 class="text-lg font-semibold mt-4">Loisirs et Intérêts</h3>
+        <div id="parent-loisir" >
+          <div class="space-y-2">
+          <input  id="loisir" type="text" placeholder="Loisir ou intérêt" class="w-full px-4 py-2 border rounded">
+        </div>
+      </div>
+        <button onclick="addLoisir()" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter un
+          loisir</button><br>
+
+        <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+      </section>
+
+      <!-- Étape 5 : Cursus universitaire -->
+      <section id="step5" class=" ">
+        <h2 class="text-xl font-semibold mt-4">Étape 5 : Cursus universitaire</h2>
+
+        <div id="parent-education" class="space-y-4">
+          <div class="space-y-2">
+            <input id="etablissements" type="text" placeholder="Nom de l'établissement" class="w-full px-4 py-2 border rounded">
+            <input id="diplome" type="text" placeholder="Diplôme" class="w-full px-4 py-2 border rounded">
+            <input id="anneDebut" type="text" placeholder="Année de début" class="w-full px-4 py-2 border rounded">
+            <input id="anneFin" type="text" placeholder="Année de fin" class="w-full px-4 py-2 border rounded">
+          </div>
+        </div>
+        <button onclick="addFormation()" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+          formation</button><br>
+
+        <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+      </section>
+
+      <!-- Étape 6 : Expériences professionnelles -->
+      <section id="step6" class=" ">
+        <h2 class="text-xl font-semibold mt-4">Étape 6 : Expériences professionnelles</h2>
+
+        <div id="parent-Experience" class="space-y-4">
+          <div class="space-y-2">
+           
+            <input id="workExperienceNom"  type="text" placeholder="Nom de l'entreprise" class="w-full px-4 py-2 border rounded">
+            <input id="workExperiencePoste" type="text" placeholder="Poste occupé" class="w-full px-4 py-2 border rounded">
+            <input id="workExperienceDateDebut" type="text" placeholder="Date de début" class="w-full px-4 py-2 border rounded">
+            <input id="workExperienceDateFin" type="text" placeholder="Date de fin" class="w-full px-4 py-2 border rounded">
+            <div id="autreEditor"  placeholder="Description du poste" class="w-full px-4 py-2 border border-gray-300 rounded-lg">
+            </div>
+          </div>
+        
+        <button onclick=" addExperiences()" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+          expérience</button><br>
+          
+
+        <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+      </section>
+
+      <!-- Étape 7 : Certifications -->
+      <section id="step7" class=" ">
+        <h2 class="text-xl font-semibold mt-4">Étape 7 : Certifications</h2>
+
+        <div id="parent-certification" class="space-y-4">
+          <div class="space-y-2">
+            <input id="certificationsNom" type="text" placeholder="Nom de la certification" class="w-full px-4 py-2 border rounded">
+            <input id="certificationsLien" type="url" placeholder="Lien vers la certification" class="w-full px-4 py-2 border rounded">
+          </div>
+        </div>
+        <button onclick="addCertification()" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+          certification</button><br>
+
+        <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+      </section>
+      
+      <!-- Étape 8 : choisir des Modèles  -->
+
+      <section id="step8" class="p-6">
+        <h2 class="text-xl font-semibold mt-4">Étape 8 : Choisir un Modèle</h2>
+        <ul class="grid w-full gap-6 md:grid-cols-2">
+          <li>
+            <input type="radio" id="model1" name="model" value="model1" class="hidden peer" required />
+            <label for="model1"
+              class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+              <div class="block">
+                <div class="w-full text-lg font-semibold">Modèle 1</div>
+                <div class="w-full">Classique</div>
+              </div>
+            </label>
+          </li>
+          <li>
+            <input type="radio" id="model2" name="model" value="model2" class="hidden peer">
+            <label for="model2"
+              class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
+              <div class="block">
+                <div class="w-full text-lg font-semibold">Modèle 2</div>
+                <div class="w-full">Standard</div>
+              </div>
+            </label>
+          </li>
+        </ul>
+        <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
+        <button type="button"
+          class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
+        <!-- Affichage pour Modèle 1 -->
+    <div id="model1Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
+    <button id="downloadBtn1" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 1 en PDF</button>
+    
+    <!-- Affichage pour Modele 2 -->
+    <div id="model2Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
+    <button id="downloadBtn2" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 2 en PDF</button>
+
+      </section>
+    
+
+    </form>
+
+  </div>
+
+
+  <!-- Include the Quill library -->
+  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+  <script src="./assets/js/scripte.js"></script>
+
+
+
+
+
+
+</body>
+
+</html>
