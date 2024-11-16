@@ -606,7 +606,7 @@ document.addEventListener("DOMContentLoaded", function () {
                   <li class="mt-1 leading-normal transition duration-100 ease-in text-gray-550 text-md hover:text-gray-700">
                   <a href="${data.portfolio}">
                     <span class="mr-5 text-xl font-semibold text-gray-700 leading-snugish">
-                      Github:
+                      portfolio:
                     </span>
                     ${data.portfolio}
                   </a>
@@ -640,7 +640,7 @@ document.addEventListener("DOMContentLoaded", function () {
             <!--Job 1-->
             <section class="mb-2 break-inside-avoid">
               <header>
-                <h3 class="text-xl font-semibold text-gray-650 leading-snugish">
+                <h3 class="text-xl  text-gray-650 leading-snugish">
                 <li>${experiencesHTML}</li>
                 </h3>
                
@@ -661,133 +661,42 @@ document.addEventListener("DOMContentLoaded", function () {
               ${formationsHTML}
                 
             </section>
-            <!--school 2 ->
-            <section class="pb-4 mt-4 mb-4 border-b-2 break-inside-avoid">
-              <header>
-                <h3 class="flex-grow text-xl font-semibold text-gray-700 leading-snugish">
-                  College For BCA
-                </h3>
-                <p class="leading-normal text-md text-gray-550">
-                  2014 – 2017 | Bechlor of Computer Applications
-                </p>
-              </header>
-              <p class="mt-1 leading-normal text-md text-gray-650">
-                <span class="font-semibold text-gray-700 text-md leading-snugish">
-                  Major:
-                </span>
-                Computer Science
-              </p>
-              <p class="mt-1 leading-normal text-md text-gray-650"></p>
-              <p class="leading-normal text-gray-700 text-md">
-                <span class="font-semibold text-gray-700 text-md leading-snugish">
-                  CGPA:
-                </span>
-                6.09
-              </p>
-            </section>
+           
           </div>
         </section>
-        <!--Projects -->
-        <section class=" mt-4 border-b-4 first:mt-0">
-          <div class="break-inside-avoid">
-            <!-- To keep in the same column -->
-            <h2 class="mb-2 text-xl font-bold tracking-widest text-gray-700 print:font-normal">
-              PROJECTS
-            </h2>
-            <!--Project 1 -->
-            <section class="pb-4 mb-4 border-b-2 break-inside-avoid">
-              <header>
-                <h3 class="text-xl font-semibold text-gray-700 leading-snugish">
-                  <a href="#!" class="group">
-                    Shipper (Transportation App)
-                  </a>
-                </h3>
-                <p class="leading-normal text-md text-gray-550">
-                  2017 | Android, Java, HTML, CSS, PHP
-                </p>
-              </header>
-              <p class="mt-2.1 text-md text-gray-700 leading-normal">
-                Shippers fulfill an important part of the supply chain. Whether by trucking, or freight train, or air, shippers deliver both packages and cost-savings to their dedicated customers.
-              </p>
-            </section>
-            <!--Project 2-->
-            <section class="pb-4 mb-4 border-b-2 break-inside-avoid">
-              <header>
-                <h3 class="text-xl font-semibold text-gray-700 leading-snugish">
-                  <a href="#!" class="group">
-                    Speech Recognization Application
-                  </a>
-                  <span class="inline-block font-normal transition duration-100 ease-in text-gray-550 print:text-black group-hover:text-gray-700">
-                  </span>
-                </h3>
-                <p class="leading-normal text-md text-gray-550">
-                  2020 | Asp.Net,HTML,CSS
-                </p>
-              </header>
-              <p class="mt-2.1 text-md text-gray-700 leading-normal">
-                We are working on an ASP.NET web application which requires the functionality to recognize user’s voice from client side. Is it possible to record this voice and compare it with a predefined text which is in the database at server end, in technology like Asp.net.
-              </p>
-            </section>
-            <section class="pb-4 mb-4 border-b-2 break-inside-avoid">
-              <header>
-                <h3 class="text-xl font-semibold text-gray-700 leading-snugish">
-                  <a href="#!" class="group">
-                    NGO Website
-                  </a>
-                  <span class="inline-block font-normal transition duration-100 ease-in text-gray-550 print:text-black group-hover:text-gray-700">
-                  </span>
-                </h3>
-                <p class="leading-normal text-md text-gray-550">
-                  2020 | HTML, CSS, SCSS, Javascript, SQL, PHP
-                </p>
-              </header>
-              <p class="mt-2.1 text-md text-gray-700 leading-normal">
-                Smile Foundation, an Indian social development organization, is directly benefitting over 15 lakh children and their families every year. We have more than 400 live welfare projects on education, healthcare, livelihood, and women’s empowerment in over 2,000 remote villages and urban slums across 25 states of India.
-              </p>
-            </section>
-          </div>
-        </section>
+        
+       
         <!--Begin Skills -->
         <section class="pb-4 mt-4 first:mt-0">
           <!-- To keep in the same column -->
           <div class="break-inside-avoid">
             <h2 class="mb-2 text-xl font-bold tracking-widest text-gray-700 print:font-normal">
-              SKILLS
+              SKILLs
             </h2>
             <!--Front-End Developer --->
             <section class="mb-2 break-inside-avoid">
               <header>
                 <h3 class="text-xl font-semibold text-gray-700 leading-snugish">
-                  Front-End Developer
+                  Cometence Techniques
                 </h3>
               </header>
 
               <div class="my-1 last:pb-1">
                 <ul class="flex flex-wrap text-sm2 leading-relaxed -mr-1.6 -mb-1 mt-2.1">
                   <li class="text-md px-2.5 py-0.5 mr-1.6 text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    HTML5
+                    ${competenceHardSkillsHTML}
                   </li>
-                  <li class="text-md px-2.5 py-0.5 mr-1.6  text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    CSS3
-                  </li>
+                </ul>
+              </div>
+               <header>
+                <h3 class="text-xl font-semibold text-gray-700 leading-snugish">
+                  Cometence Interpersonnelles
+                </h3>
+              </header>
+              <div class="my-1 last:pb-1">
+                <ul class="flex flex-wrap text-sm2 leading-relaxed -mr-1.6 -mb-1 mt-2.1">
                   <li class="text-md px-2.5 py-0.5 mr-1.6 text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    SCSS
-                  </li>
-
-                  <li class="text-md px-2.5 py-0.5 mr-1.6  text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    Tailwind.css
-                  </li>
-                  <li class="text-md px-2.5 py-0.5 mr-1.6  text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    Javascript
-                  </li>
-                  <li class="text-md px-2.5 py-0.5 mr-1.6  text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    PHP
-                  </li>
-                  <li class="text-md px-2.5 py-0.5 mr-1.6  text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    JQuery
-                  </li>
-                  <li class="text-md px-2.5 py-0.5 mr-1.6  text-gray-200 leading-relaxed print:bg-white print:border-inset bg-gray-250 mb-3">
-                    BOOTSTRAP
+                    ${competenceSoftSkillsHTML}
                   </li>
                 </ul>
               </div>
@@ -811,18 +720,87 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Affiche les données pour le Modèle 2
   function displayModel2Data(data) {
+      // Construire les sections dynamiques pour chaque catégorie
+      const competenceHardSkillsHTML = data.competenceHardSkills.map(skill => `<li>${skill}</li>`).join("");
+      const competenceSoftSkillsHTML = data.competenceSoftSkills.map(skill => `<li>${skill}</li>`).join("");
+      const languagesHTML = data.languages.map(lang => `<li>${lang}</li>`).join("");
+      const loisirHTML = data.loisir.map(loisir => `<li>${loisir}</li>`).join("");
+      const formationsHTML = data.formations.map(formation => `<li>${formation}</li>`).join("");
+      const experiencesHTML = data.workExperiences.map(exp => `<li>${exp}</li>`).join("");
+      const certificationsHTML = data.certifications.map(cert => `<li>${cert}</li>`).join("");
+      // Gestion de l'image de profil
+      let inputPhoto = '';
+      const fileInput = document.querySelector('.image-upload').files[0];
+      if (fileInput) {
+        inputPhoto = URL.createObjectURL(fileInput);
+      }
     model2Display.innerHTML = `
-<h2>CV de ${data.name}</h2>
-<ul>
-  <li><strong>Email :</strong> ${data.email}</li>
-  <li><strong>Téléphone :</strong> ${data.phone}</li>
-  <li><strong>Adresse :</strong> ${data.address}</li>
-  <li><strong>LinkedIn :</strong> ${data.linkedin}</li>
-  <li><strong>GitHub :</strong> ${data.github}</li>
-  <li><strong>Portfolio :</strong> ${data.portfolio}</li>
-  <li><strong>Titre du poste :</strong> ${data.jobTitle}</li>
-  <li><strong>Résumé de profil :</strong> ${data.profileSummary}</li>
-</ul>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div id="template1" class="w-full max-w-3xl  border p-6 rounded-lg shadow-lg bg-white">
+        <!-- Section Latérale -->
+        <div class="flex">
+            <div class="w-1/3 bg-blue-500 text-white p-4 rounded-l-lg">
+                ${inputPhoto ? `<img src="${inputPhoto}" width="200" height="200" alt="Profile" class=" ml-5 rounded-full border-4 border-gray-300 shadow-md object-cover">` : '<p class="text-gray-500">Pas de photo sélectionnée</p>'}
+                <h2 class="text-2xl font-semibold text-center">${data.name}</h2>
+                <p class="text-center text-sm">${data.titrePoste}</p>
+                <div class="mt-4">
+                    <p class="text-sm"><strong>Email:</strong> ${data.email}</p>
+                    <p class="text-sm"><strong>Téléphone:</strong> ${data.phone}</p>
+                    <p class="text-sm"><strong>Address:</strong> ${data.address}</p>
+                    <p class="text-sm"><strong>LinkedIn:</strong> ${data.linkedin}</p>
+                    <p class="text-sm"><strong>Github:</strong> ${data.github}</p>
+                    <p class="text-sm"><strong>Portfolio:</strong> ${data.portfolio}</p>
+                </div>
+                <div class="w-1/3 bg-blue-500 text-white p-4 rounded-l-lg">
+                   
+                  
+                    <div class="mt-4">
+                        <strong>Langues</strong>
+                        <p class="text-sm">${languagesHTML}</p>
+                        <strong>Loisir</strong>
+                        <p class="text-sm"> ${loisirHTML}</p>
+                        
+                        
+                    </div>
+            </div>
+            
+           
+        </div>
+         <!-- Section Principale -->
+            <div class="w-2/3 p-4">
+                <h3 class="text-lg font-semibold border-b pb-2 mb-4">Résumé</h3>
+                <p class="text-sm">${data.resumeProfil}</p>
+                <h3 class="text-lg font-semibold border-b pb-2 mb-4">Formation</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>- ${formationsHTML}</li>
+                    
+                </ul>
+                <h3 class="text-lg font-semibold border-b pb-2 mt-6 mb-4">Expériences professionnelles</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>- ${experiencesHTML}</li>
+                    
+                </ul>
+                <h3 class="text-lg font-semibold border-b pb-2 mt-6 mb-4">Certifications</h3>
+                <ul class="list-disc pl-5 space-y-2">
+                    <li>- ${certificationsHTML}</li>
+                    
+                </ul>
+                
+                <h3 class="text-lg font-semibold border-b pb-2 mt-6 mb-4">Compétences Techniques</h3>
+                <ul class="flex flex-wrap space-x-2 text-sm">
+                    <li class="bg-gray-200 rounded-full px-3 py-1">-${competenceHardSkillsHTML}</li>
+                    
+                </ul>
+                <h3 class="text-lg font-semibold border-b pb-2 mt-6 mb-4">Compétences Interpersonnelles</h3>
+                <ul class="flex flex-wrap space-x-2 text-sm">
+                    <li class="bg-gray-200 rounded-full px-3 py-1">-${competenceSoftSkillsHTML}</li>
+                    
+                </ul>
+            </div>
+    </div>
+    
+   
+</body>
       `;
     model2Display.classList.remove("hidden");
     model1Display.classList.add("hidden");
