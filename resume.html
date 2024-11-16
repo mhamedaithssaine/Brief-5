@@ -9,39 +9,54 @@
   <title>Document</title>
 </head>
 
-<body class="">
-  
+<body class="bg-gray-100 min-h-screen flex-row items-center justify-center">
 
-<!--formulaire steppers-->
-  <div class=" w-full max-w-lg container  mx-auto p-6 max-w-block bg-white shadow-lg rounded-lg  ">
-    <h1 class="text-2xl font-bold text-center">Création de CV en Ligne</h1><br>
 
+  <!--formulaire steppers-->
+  <div class=" container   mx-auto max-w-4xl p-6 bg-white shadow-lg rounded-lg ">
+    <h1 class="text-3xl font-bold text-center text-blue-600">Création de CV en Ligne</h1><br>
+    <p class="text-center text-gray-600 mt-2">Remplissez les informations étape par étape pour générer un CV
+      professionnel.</p>
     <!-- Barre de progression -->
-    <div class="w-full bg-gray-300 rounded-full h-2.5 mb-4">
-      <div id="progress-bar" class="bg-blue-500 h-2.5 rounded-full" style="width: 0%"></div>
+    <div class="relative mt-6">
+      <div class="w-full bg-gray-300 h-2.5 rounded-full">
+        <div id="progress-bar" class="bg-blue-500 h-2.5 rounded-full" style="width: 0%"></div>
+      </div>
     </div>
 
     <!-- Formulaire à étapes -->
-    <form id="cvForm" class="">
+    <form id="cvForm" class=" space-y-8">
 
       <!-- Étape 1 : Informations personnelles -->
-      <section id="step1" class="">
+      <section id="step1" class="space-y-6">
         <h2 class="text-xl font-semibold mt-4">Étape 1 : Informations personnelles</h2>
-        <label for="name" class="">Nom complet</label>
-        <input type="text" id="name" name="name" class="w-full px-4 py-2 border rounded">
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="">
+            <label for="name" class="">Nom complet</label>
+            <input type="text" id="name" name="name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-blue-500">
+            <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid name.</p>
+          </div>
+          <div class="grid gap-4 md:grid-cols-2">
+            <label for="photo" class="">Photo de profil</label>
+            <input type="file" accept="image/*" id="photo" name="image"
+              class="image-upload w-full px-4 py-2 border rounded">
+              <p id="photoError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid image.</p>
 
-        <label for="photo" class="">Photo de profil</label>
-        <input type="file" accept="image/*" id="photo" name="image" class="image-upload w-full px-4 py-2 border rounded">
-
+          </div>
+        </div>
+        
         <label for="email" class="">Email</label>
         <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded">
-
+        <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email address.</p>
 
         <label for="phone" class=" ">Téléphone</label>
         <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border rounded">
+        <p id="phoneError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid phone number.</p>
+
 
         <label for="name" class=" ">Address</label>
         <input type="text" id="address" name="name" class="w-full px-4 py-2 border rounded">
+        <p id="addressError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid address.</p>
 
         <label for="linkedin" class=" ">LinkedIn</label>
         <input type="url" id="linkedin" name="linkedin" class="w-full px-4 py-2 border rounded">
@@ -52,8 +67,9 @@
         <label for="portfolio" class=" ">Portfolio</label>
         <input type="url" id="portfolio" name="portfolio" class="w-full px-4 py-2 border rounded">
 
-        <a href="index.html"><button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Cancel</button></a>
-        <button  type="button"
+        <a href="index.html"><button type="button"
+            class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Cancel</button></a>
+        <button type="button" id="swuivants"
           class="  mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
       </section>
 
@@ -78,60 +94,78 @@
       <section id="step3" class=" ">
         <h2 class="text-xl font-semibold mt-4">Étape 3 : Compétences techniques et soft skills</h2>
         <h3 class="text-lg font-semibold">Compétences techniques</h3>
-        <div id="parent-compTechniques"> 
+        <div id="parent-compTechniques">
           <div id="competenceTechnique" class="space-y-2">
-            <input type="text" id="hardSkills" class="competence-technique-input name w-full px-4 py-2 border rounded" placeholder="Compétence technique">
+            <input type="text" id="hardSkills" class="competence-technique-input name w-full px-4 py-2 border rounded"
+              placeholder="Compétence technique">
           </div>
-          
+
         </div>
-        
-        <button onclick="addCompetenceTechniques()" id="getValuesButton" type="button"  class=" mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+
+        <button onclick="addCompetenceTechniques()" id="getValuesButton" type="button"
+          class=" mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
           compétence technique</button>
 
 
         <h3 class="text-lg font-semibold mt-4">Compétences interpersonnelles</h3>
         <div id="parent-compInterpersonnelles">
-        <div id="competenceInterpersonnells" class="space-y-2">
-          <input type="text" id="softSkills" class="competence-interpersonnelles-input w-full px-4 py-2 border rounded" placeholder="Compétence interpersonnelle">
-          
+          <div id="competenceInterpersonnells" class="space-y-2">
+            <input type="text" id="softSkills"
+              class="competence-interpersonnelles-input w-full px-4 py-2 border rounded"
+              placeholder="Compétence interpersonnelle">
+
+          </div>
         </div>
-      </div>
-        <button onclick="addCompetenceInterpersonnelles()" id="getValueInterpersonnelles"  type="button"  class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+        <button onclick="addCompetenceInterpersonnelles()" id="getValueInterpersonnelles" type="button"
+          class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
           compétence interpersonnelle</button><br>
-          
+
 
         <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
-        <button type="button" 
-          class=" suiva mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700" >Suivant</button>
+        <button type="button"
+          class=" suiva mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
       </section>
 
-     
-      
+
+
       <!-- Étape 4 : Langues et Loisirs -->
       <section id="step4" class=" ">
         <h2 class="text-xl font-semibold mt-4">Étape 4 : Langues et Loisirs</h2>
 
         <!-- Langues -->
         <h3 class="text-lg font-semibold">Langues</h3>
-        <div id="parent-langues" >
-        <div  class="space-y-2">
-          <div class="flex space-x-2">
-            <input type="text" id="languages" placeholder="Langue" class="langues-niveau-input w-1/2 px-4 py-2 border rounded">
-            <input type="text" id="niveau" placeholder="Niveau" class="langues-niveau-input w-1/2 px-4 py-2 border rounded">
+        <div id="parent-langues">
+          <div class="space-y-2">
+            <div class="flex space-x-2">
+              
+              <input type="text" id="languages" placeholder="Langue"
+                class="langues-niveau-input w-1/2 px-4 py-2 border rounded">
+              <!-- <input type="text" id="niveau" placeholder="Niveau"
+                class="langues-niveau-input w-1/2 px-4 py-2 border rounded"> -->
+                <label for="niveau" class="block text-sm font-medium text-gray-700">Niveau</label>
+        <select id="niveau" name="niveau" class="langues-niveau-input w-full px-4 py-2 border rounded-lg focus:outline-blue-500">
+          <option>Débutant</option>
+          <option>Intermédiaire</option>
+          <option>Avancé</option>
+          <option>Fluent</option>
+        </select>
+            </div>
           </div>
         </div>
-        </div>
-        <button onclick="addLanguesNiveau()" id="getLanguesNiveau" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+        <button onclick="addLanguesNiveau()" id="getLanguesNiveau" type="button"
+          class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
           langue</button>
 
         <!-- Loisirs -->
         <h3 class="text-lg font-semibold mt-4">Loisirs et Intérêts</h3>
-        <div id="parent-loisir" >
+        <div id="parent-loisir">
           <div class="space-y-2">
-          <input  id="loisir" type="text" placeholder="Loisir ou intérêt" class="loisir-input w-full px-4 py-2 border rounded">
+            <input id="loisir" type="text" placeholder="Loisir ou intérêt"
+              class="loisir-input w-full px-4 py-2 border rounded">
+          </div>
         </div>
-      </div>
-        <button onclick="addLoisir()" id="getLoisir" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter un
+        <button onclick="addLoisir()" id="getLoisir" type="button"
+          class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter un
           loisir</button><br>
 
         <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
@@ -145,13 +179,18 @@
 
         <div id="parent-education" class="space-y-4">
           <div class="space-y-2">
-            <input id="etablissements" type="text" placeholder="Nom de l'établissement" class="formation-input w-full px-4 py-2 border rounded">
-            <input id="diplome" type="text" placeholder="Diplôme" class="formation-input w-full px-4 py-2 border rounded">
-            <input id="anneDebut" type="text" placeholder="Année de début" class="formation-input w-full px-4 py-2 border rounded">
-            <input id="anneFin" type="text" placeholder="Année de fin" class="formation-input w-full px-4 py-2 border rounded">
+            <input id="etablissements" type="text" placeholder="Nom de l'établissement"
+              class="formation-input w-full px-4 py-2 border rounded">
+            <input id="diplome" type="text" placeholder="Diplôme"
+              class="formation-input w-full px-4 py-2 border rounded">
+            <input id="anneDebut" type="text" placeholder="Année de début"
+              class="formation-input w-full px-4 py-2 border rounded">
+            <input id="anneFin" type="text" placeholder="Année de fin"
+              class="formation-input w-full px-4 py-2 border rounded">
           </div>
         </div>
-        <button onclick="addFormation()" id="getFormation" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+        <button onclick="addFormation()" id="getFormation" type="button"
+          class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
           formation</button><br>
 
         <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
@@ -165,18 +204,24 @@
 
         <div id="parent-Experience" class="space-y-4">
           <div class="space-y-2">
-           
-            <input id="workExperienceNom"  type="text" placeholder="Nom de l'entreprise" class="experience-input w-full px-4 py-2 border rounded">
-            <input id="workExperiencePoste" type="text" placeholder="Poste occupé" class="experience-input w-full px-4 py-2 border rounded">
-            <input id="workExperienceDateDebut" type="text" placeholder="Date de début" class="experience-input w-full px-4 py-2 border rounded">
-            <input id="workExperienceDateFin" type="text" placeholder="Date de fin" class="experience-input w-full px-4 py-2 border rounded">
-            <div id="autreEditor"  placeholder="Description du poste" class=" w-full px-4 py-2 border border-gray-300 rounded-lg">
+
+            <input id="workExperienceNom" type="text" placeholder="Nom de l'entreprise"
+              class="experience-input w-full px-4 py-2 border rounded">
+            <input id="workExperiencePoste" type="text" placeholder="Poste occupé"
+              class="experience-input w-full px-4 py-2 border rounded">
+            <input id="workExperienceDateDebut" type="text" placeholder="Date de début"
+              class="experience-input w-full px-4 py-2 border rounded">
+            <input id="workExperienceDateFin" type="text" placeholder="Date de fin"
+              class="experience-input w-full px-4 py-2 border rounded">
+            <div id="autreEditor" placeholder="Description du poste"
+              class=" w-full px-4 py-2 border border-gray-300 rounded-lg">
             </div>
           </div>
         </div>
-        <button onclick=" addExperiences()" id="addExperience" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+        <button onclick=" addExperiences()" id="addExperience" type="button"
+          class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
           expérience</button><br>
-          
+
 
         <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
         <button type="button"
@@ -189,24 +234,27 @@
 
         <div id="parent-certification" class="space-y-4">
           <div class="space-y-2">
-            <input id="certificationsNom" type="text" placeholder="Nom de la certification" class="certification-input w-full px-4 py-2 border rounded">
-            <input id="certificationsLien" type="url" placeholder="Lien vers la certification" class="certification-input w-full px-4 py-2 border rounded">
+            <input id="certificationsNom" type="text" placeholder="Nom de la certification"
+              class="certification-input w-full px-4 py-2 border rounded">
+            <input id="certificationsLien" type="url" placeholder="Lien vers la certification"
+              class="certification-input w-full px-4 py-2 border rounded">
           </div>
         </div>
-        <button onclick="addCertification()" id="addCertification1" type="button" class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
+        <button onclick="addCertification()" id="addCertification1" type="button"
+          class="mt-2 bg-green-500 text-white px-2 py-1 rounded hover:bg-green-700">+ Ajouter une
           certification</button><br>
 
         <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
         <button type="button"
           class="mt-4 float-end bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700">Suivant</button>
       </section>
-      
+
       <!-- Étape 8 : choisir des Modèles  -->
 
       <section id="step8" class="p-6">
         <h2 class="text-xl font-semibold mt-4">Étape 8 : Choisir un Modèle</h2>
         <ul class="grid w-full gap-6 md:grid-cols-2">
-          
+
           <li>
             <input type="radio" id="model1" name="model" value="model1" class="hidden peer" />
             <label for="model1"
@@ -217,9 +265,9 @@
               </div>
             </label>
           </li>
-          
+
           <li>
-            <input  type="radio" id="model2" name="model" value="model2" class="hidden peer">
+            <input type="radio" id="model2" name="model" value="model2" class="hidden peer">
             <label for="model2"
               class="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border border-gray-200 rounded-lg cursor-pointer peer-checked:border-blue-600 peer-checked:text-blue-600 hover:text-gray-600 hover:bg-gray-100">
               <div class="block">
@@ -230,25 +278,41 @@
           </li>
         </ul>
         <button type="button" class="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700">Précédent</button>
-        
-    
+
+
 
       </section>
-    
-       
-    </form>
 
+
+    </form>
+ <!-- Affichage pour Modele 1 -->
+ <div id="model1Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
+ <button id="downloadBtn1"
+   class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 1 en
+   PDF</button>
+
+ <!-- Affichage pour Modele 2 -->
+ <div id="model2Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
+ <button id="downloadBtn2"
+   class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 2 en
+   PDF</button>
   </div>
-    <!-- Affichage pour Modèle 1 -->
-    <div id="model1Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
-    <button id="downloadBtn1" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 1 en PDF</button>
-    
-    <!-- Affichage pour Modele 2 -->
-    <div id="model2Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
-    <button id="downloadBtn2" class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 2 en PDF</button>
+  <!-- Affichage pour Modele 1 -->
+  <div id="model1Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
+  <button id="downloadBtn1"
+    class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 1 en
+    PDF</button>
+
+  <!-- Affichage pour Modele 2 -->
+  <div id="model2Display" class="mt-6 p-4 bg-gray-100 rounded hidden"></div>
+  <button id="downloadBtn2"
+    class="mt-4 bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 hidden">Télécharger Modèle 2 en
+    PDF</button>
 
   <!-- Include the Quill library -->
   <script src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.js"></script>
+
   <script src="./assets/js/scripte.js"></script>
 
 
